@@ -1,9 +1,10 @@
 const findBestEmployee = function(employees) {
     const values = Object.values(employees);
-    const keys = Object.keys(employees);
     const highestPay = Math.max(...values);
-    const highestPayIndex = values.indexOf(highestPay);
-    return keys[highestPayIndex];
+    for (const key in employees) {
+      if (employees[key] === highestPay)
+      return key;
+    }
 }
     
   
